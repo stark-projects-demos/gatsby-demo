@@ -23,10 +23,7 @@ jobs:
         with:
             # Most of the following values are simply shell commands. You can use these to set up the container as needed for your app
             token: ${{ github.event.inputs.token }} # The action will use this to send an audit report back to Stark.
-            setup: '' # [Optional] Set up the container. Install some tools, export variables, etc.
-            prebuild: '' # [Optional] Run any prebuild steps, cd into subdirectories, etc.
             build: 'npm run build' # [Optional] Build steps. Use && for multiple steps.
-            serve: 'npm run serve' # [Optional] Tell us how to serve your app.
+            serve: 'npm run preview' # [Optional] Tell us how to serve your app.
             wait_time: 5000 # [Required, default 5000] Milliseconds to wait before your app can start serving
-            url: 'http://localhost:8000/' # [Required] Where does your app run? e.g. http://localhost:3000.
-            cleanup: 'npm run clean' # [Optional] After scanning, the command running in serve step is auto terminated. Use this to run any cleanup commands.
+            url: 'http://localhost:5173/' # [Required] Where does your app run? e.g. http://localhost:3000.
