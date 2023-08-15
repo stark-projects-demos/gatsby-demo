@@ -19,11 +19,10 @@ jobs:
 
       - name: Audit
         id: stark
-        uses: stark-contrast/accessibility-check-action@0.1.0-beta.0
+        uses: stark-contrast/accessibility-check-action@develop
         with:
             # Most of the following values are simply shell commands. You can use these to set up the container as needed for your app
             token: ${{ github.event.inputs.token }} # The action will use this to send an audit report back to Stark.
-            setup: 'wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | sh && nvm install 18 && nvm alias default 18 && nvm use default'
             prebuild: 'npm run i'
             build: 'npm run build' # [Optional] Build steps. Use && for multiple steps.
             serve: 'npm run preview' # [Optional] Tell us how to serve your app.
