@@ -1,10 +1,14 @@
 name: Stark Web Audit
+run-name: ${{ github.event.inputs.display-title }}
 
 on:
   workflow_dispatch:
     inputs:
       token:
         description: 'Stark Token'
+        required: true
+      display-title:
+        description: 'Display title'
         required: true
 
 jobs:
